@@ -1,0 +1,65 @@
+clc;
+clear all;
+close all;
+
+% Constante fisica da viga
+E = ; % INSERIR VALOR DO E
+I = ; % INSERIR VALOR DO I
+EI = E*I;
+
+% Trecho
+inicio = ; % INSERIR VALOR DO INICIO
+inter1 = ; % INSERIR VALOR DO INTERN1
+fim = ; % INSERIR VALOR FIM
+x1 = linspace(inicio,inter1,1000);
+x2 = linspace(inter1,fim,1000);
+
+% Deslocamento
+V1 = ; % INSERIR V1 DESLOC
+V2 = ; % INSERIR V2 DESLOC
+% Inclinacao
+O1 = ; % EQ DA INCLINACAO 1
+O2 = ; EQ DA INCLINCAO 2
+
+% Parametros de tracado
+cor1 = []; INSERIR PARAMETROS COR1
+cor2 = []; INSERIR PARAMETROS COR2
+
+
+% Grafico deslocamento
+z = figure('DefaultAxesFontSize',12);
+txt = ['Primeiro Trecho'];
+plot(x1,V1,'-','color', cor1, "linewidth", 5, "markersize", 8, "DisplayName", txt);
+hold on;
+txt = ['Segundo Trecho'];
+plot(x2,V2,'-','color', cor2, "linewidth", 5, "markersize", 8, "DisplayName", txt);
+hold off;
+title('Grafico de deslocamento da viga')
+ax = xlabel('Posicao na viga (m)');
+set(ax,'FontSize',12);
+set(ax,'FontWeight','bold')
+ay = ylabel('Deslocamento (m)');
+set(ay,'FontSize',12);
+set(ay,'FontWeight','bold');
+legend_copy = legend("location", "southwest");
+set (legend_copy, "fontsize", 12);
+grid on;
+
+% Grafico inclinacao
+z = figure('DefaultAxesFontSize',12);
+txt = ['Primeiro Trecho'];
+plot(x1,O1,'-','color', cor1, "linewidth", 5, "markersize", 8, "DisplayName", txt);
+hold on;
+txt = ['Segundo Trecho'];
+plot(x2,O2,'-','color', cor2, "linewidth", 5, "markersize", 8, "DisplayName", txt);
+hold off;
+title('Grafico de Inclinacao da viga')
+ax = xlabel('Posicao na viga (m)');
+set(ax,'FontSize',12);
+set(ax,'FontWeight','bold')
+ay = ylabel('Angulo (rad)');
+set(ay,'FontSize',12);
+set(ay,'FontWeight','bold');
+legend_copy = legend("location", "southwest");
+set (legend_copy, "fontsize", 12);
+grid on;
